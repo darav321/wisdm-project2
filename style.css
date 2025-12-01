@@ -276,6 +276,48 @@ body {
     vertical-align: middle;
 }
 
+.location {
+    cursor: pointer;
+
+}
+
+.location:hover {
+    text-decoration: underline;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#search-bar {
+    width: 0;
+    opacity: 0;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: width 0.4s ease, opacity 0.3s ease;
+    margin-left: 10px;
+}
+
+#search-bar.active {
+    width: 180px;
+    opacity: 1;
+}
+
+#search-btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+#search-btn.active {
+    transform: translateY(10px);
+}
+
+
 .other-info {
     display: flex;
     width: 1039px;
@@ -403,7 +445,6 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: 18px;
-    leading-trim: NONE;
     line-height: 28px;
     letter-spacing: 2%;
     gap: 46px;
@@ -486,8 +527,14 @@ body {
 }
 
 .content-quote img {
-    width: 32px;
-    height: 30px;
+    cursor: pointer;
+    transition: .3s;
+    padding: 10px;
+}
+
+.content-quote img:hover {
+    background-color: rgb(201, 198, 198);
+    border-radius: 100%;
 }
 
 .quote-content {
@@ -609,6 +656,17 @@ body {
     font-size: 18px;
     line-height: 28px;
     letter-spacing: 2%;
+    cursor: pointer;
+}
+
+.remote-links p:nth-child(1):hover {
+    transition: .3s;
+    color: red;
+}
+
+.remote-links p:nth-child(2):hover {
+    transition: .3s;
+    color: red;
 }
 
 #second-line {
@@ -750,14 +808,25 @@ body {
     justify-content: center;
     border: 2px solid #F39B4E;
     border-radius: 100%;
+    cursor: pointer;
+    transition: .4s;
+}
+
+.icon-border:hover {
+    background-color: #F39B4E;
 }
 
 #yellow-icon {
-    background-color: #F39B4E;
+    border: 2px solid #F39B4E;
     padding: 10px;
     display: flex;
     align-items: center;
+    transition: .4s;
     border-radius: 100%;
+}
+
+#yellow-icon:hover {
+    background-color: #F39B4E;
 }
 
 .privacy {
@@ -767,6 +836,26 @@ body {
     top: 354px;
     right: 133px;
 }
+
+
+
+#quote-1 {
+    display: block;
+}
+
+#quote-2 {
+    display: none;
+}
+
+#quote-3 {
+    display: none;
+}
+
+#quote-4 {
+    display: none;
+}
+
+
 
 
 
