@@ -34,12 +34,23 @@ document.querySelector(".location").addEventListener("click", () => {
 })
 
 const searchBtn = document.getElementById("search-btn");
-const searchBar = document.getElementById("search-bar");
+const searchBar = document.getElementById("nav-search");
 
 searchBtn.addEventListener("click", () => {
-    searchBar.classList.toggle("active");
-    searchBtn.classList.toggle("active");
+    searchBar.style.display = "block"
 });
+
+const signinBtn = document.getElementById("signin-btn")
+
+signinBtn.addEventListener("click", ()=> {
+    document.querySelector(".pop-up").style.display = "flex";
+})
+
+const closeBtn = document.getElementById("popup-close-btn")
+
+closeBtn.addEventListener("click", () => {
+    document.querySelector(".pop-up").style.display = "none";
+})
 
 
 

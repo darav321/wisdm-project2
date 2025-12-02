@@ -5,11 +5,74 @@
     font-family: Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #F5F5F5;
+}
+
+.pop-up {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.pupup-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: left;
+    width: 80%;
+}
+
+.pupup-inputs input {
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid black;
+    outline: none;
+}
+
+.signin {
+    background-color: white;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 50px 40px;
+    gap: 18px;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.signin h1 {
+    margin-bottom: 8px;
+}
+
+.pop-btn {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#signin-btn {
+    cursor: pointer;
 }
 
 .navbar {
@@ -21,6 +84,31 @@ body {
     padding-right: 155px;
     padding-bottom: 36px;
     width: 1440px;
+}
+
+#nav-search {
+    display: none;
+    padding: 6px 10px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.close-btn {
+    padding: 10px 20px;
+    color: black;
+    font-weight: 600;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    border: 2px solid red;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.btns {
+    display: flex;
+    gap: 10px;
 }
 
 .logo {
@@ -52,8 +140,6 @@ body {
     align-items: center;
     gap: 8px;
     margin-top: 21px;
-    max-width: 325px;
-    width: 100%;
     height: 42px;
     list-style: none;
 }
@@ -84,8 +170,10 @@ body {
     gap: 16px;
 }
 
-.nav-links-lower p {
+.nav-links-lower a, .nav-links-lower p {
     font-weight: 700;
+    text-decoration: none;
+    color: black;
     font-style: Bold;
     font-size: 16px;
     line-height: 27px;
@@ -93,6 +181,17 @@ body {
     text-align: center;
     vertical-align: bottom;
     padding: 8px 16px;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 40px;
+}
+
+.nav-links-lower a:hover {
+    background-color: #d3d1d1;
+}
+
+.nav-links-lower a:active {
+    background-color: #b9b7b7;
 }
 
 #rounded-nav-link {
