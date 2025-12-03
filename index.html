@@ -10,25 +10,25 @@
 
 <body>
     <div class="pop-up">
-        <div class="signin">
-            <h1>Sign in to your account</h1>
-            <div class="pupup-inputs">
-                <label for="name">Name</label>
-                <input type="text">
-            </div>
-            <div class="pupup-inputs">
-                <label for="email">Email</label>
-                <input type="email">
-            </div>
-            <div class="pupup-inputs">
-                <label for="password">Password</label>
-                <input type="password">
-            </div>
-            <div class="btns">
-                <button class="pop-btn">Submit</button>
-                <button id="popup-close-btn" class="close-btn">Close</button>
-            </div>
-        </div>
+            <form class="signin" action="">
+                <h1>Sign in to your account</h1>
+                <div class="pupup-inputs">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" autocomplete="name">
+                </div>
+                <div class="pupup-inputs">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" autocomplete="email">
+                </div>
+                <div class="pupup-inputs">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="btns">
+                    <button type="submit" class="pop-btn">Submit</button>
+                    <button id="popup-close-btn" class="close-btn">Close</button>
+                </div>
+            </form>
     </div>
     <header class="navbar">
         <div class="logo">
