@@ -37,7 +37,9 @@
         <div class="nav-links">
             <div class="nav-links-upper">
                 <ul>
-                    <input id="nav-search" type="text">
+                    <form id="nav-search" onsubmit="searchWord()">
+                        <input id="nav-search-input" type="text">
+                    </form>
                     <li><img id="search-btn" src="assets/search.png" alt="">
                         <p id="search-text">Search</p>
                     </li>
@@ -298,6 +300,15 @@
             <p class="privacy">Privacy & Terms</p>
         </div>
     </footer>
+
+    <div class="jump" id="jump_to_top">
+        <p>^</p>
+    </div>
+    <div class="occurences">
+        <img src="assets/left-arrow.png" id="prev-occ" class="occ-btns">
+        <img src="assets/right-arrow.png" id="next-occ" class="occ-btns">
+        <img src="assets/close.png" id="close-occ" class="occ-btns">
+    </div>
     <script src="script.js"></script>
 </body>
 

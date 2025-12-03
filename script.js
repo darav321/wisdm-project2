@@ -34,10 +34,29 @@ document.querySelector(".location").addEventListener("click", () => {
 })
 
 const searchBtn = document.getElementById("search-btn");
+const findClass = document.getElementById("rounded-nav-link")
 const searchBar = document.getElementById("nav-search");
 
 searchBtn.addEventListener("click", () => {
-    searchBar.style.display = "block"
+    if(searchBar.style.display == "block")
+    {
+        searchBar.style.display = "none"
+    }
+    else
+    {
+        searchBar.style.display = "block"
+    }
+});
+
+findClass.addEventListener("click", () => {
+    if(searchBar.style.display == "block")
+    {
+        searchBar.style.display = "none"
+    }
+    else
+    {
+        searchBar.style.display = "block"
+    }
 });
 
 const signinBtn = document.getElementById("signin-btn")
@@ -50,6 +69,54 @@ const closeBtn = document.getElementById("popup-close-btn")
 
 closeBtn.addEventListener("click", () => {
     document.querySelector(".pop-up").style.display = "none";
+})
+
+function searchWord() {
+    const keyword = document.getElementById("nav-search-input").value.trim();
+
+    if(!keyword) return;
+
+    document.querySelectorAll(".highlight").forEach(el => {
+        el.classList.remove("highlight")
+    })
+
+    const bodyText = document.body.innerHTML;
+
+    const regex = new RegExp(`\\b(${keyword})\\b`, "gi");
+    const match = bodyText.match(regex);
+
+    if(!match) {
+        alert("No matches")
+        return;
+    }
+
+
+    document.body.innerHTML = bodyText.replace(regex, `<span class="highlight">$1</span>`)
+
+    const first = document.querySelector(".highlight")
+
+    if(first) {
+        first.scrollIntoView({behavior: "smooth", block: "center"});
+    }
+
+    document.querySelector(".occurences").style.display = "flex";
+
+}
+
+const jumpBtn = document.getElementById("jump_to_top")
+
+window.addEventListener("scroll", () => {
+    if(window.scrollY > 400) {
+        jumpBtn.style.display = "block"
+    }
+    else 
+    {
+        jumpBtn.style.display = "none"
+    }
+})
+
+jumpBtn.addEventListener("click", () => {
+    window.scrollTo({top: 0, behavior: "smooth"})
 })
 
 
