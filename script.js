@@ -67,27 +67,21 @@ closeBtn.addEventListener("click", () => {
     document.querySelector(".pop-up").style.display = "none";
 })
 
-function searchWord() {
+function searchWord(event) {
+    event.preventDefault();
     const keyword = document.getElementById("nav-search-input").value.trim();
 
     if (!keyword) return;
 
-    document.querySelectorAll(".highlight").forEach(el => {
-        el.classList.remove("highlight")
-    })
-
-    const bodyText = document.body.innerHTML;
+    clearHighlights();
 
     const regex = new RegExp(`\\b(${keyword})\\b`, "gi");
-    const match = bodyText.match(regex);
-
-    if (!match) {
-        alert("No matches")
-        return;
-    }
 
 
-    document.body.innerHTML = bodyText.replace(regex, `<span class="highlight">$1</span>`)
+    const container = document.getElementById("search-content");
+
+    container.innerHTML = container.innerHTML.replace(regex, `<span class="highlight">$1</span>`);
+
 
     const first = document.querySelector(".highlight")
 
@@ -101,14 +95,13 @@ function searchWord() {
         clearHighlights();
         document.querySelector(".occurences").style.display = "none";
     })
+}
 
-    function clearHighlights() {
+function clearHighlights() {
         document.querySelectorAll(".highlight").forEach(el => {
             el.replaceWith(document.createTextNode(el.textContent));
         });
     }
-
-}
 
 const jumpBtn = document.getElementById("jump_to_top")
 
